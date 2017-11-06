@@ -1,0 +1,8 @@
+<hr>
+<input type="text" class="form-control" ng-model="vm.user.name" placeholder="Name..">
+<br>
+<input type="number" class="form-control" ng-model="vm.user.location" placeholder="Your zip code..">
+<br>
+<input type="password" class="form-control" ng-model="vm.user.password" placeholder="Password..">
+<hr>
+<button ng-disabled="!vm.user.name || !vm.user.password || !vm.user.location" class="btn btn-block btn-success" ng-click="vm.register()">Register</button>

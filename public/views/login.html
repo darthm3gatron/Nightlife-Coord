@@ -1,0 +1,6 @@
+<hr>
+<input type="text" class="form-control" ng-model="vm.user.name" placeholder="Name..">
+<br>
+<input type="password" class="form-control" ng-model="vm.user.password" placeholder="Password..">
+<hr>
+<button ng-disabled="!vm.user.name || !vm.user.password" class="btn btn-block btn-success" ng-click="vm.login()">Login</button>

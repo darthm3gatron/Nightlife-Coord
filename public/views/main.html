@@ -1,0 +1,21 @@
+<a href="/login" ng-if="!vm.user">Login</a>
+<a href="/register" ng-if="!vm.user">Register</a>
+<button class="btn btn-link" ng-if="vm.user" ng-click="vm.logout();">Log Out</button>
+<h3 ng-if="vm.user">Welcome back, {{vm.user.name}}</h3>
+<h3 ng-if="vm.user">Your location: {{vm.user.location}}</h3>
+<hr>
+<h3 ng-cloak ng-if="vm.businesses.length > 0">Bars near you...</h3>
+<ul style="list-style-type: none;" ng-if="vm.businesses.length > 0" ng-cloak>
+    <li ng-repeat="business in vm.businesses">
+        <h3>{{business.name}}</h3>
+        {{business.zipCode}}
+        <a href="{{business.mobile_url}}" style="cursor: pointer;">
+            <img ng-src="{{business.image_url}}" alt="">
+        </a>
+        <h4>Users going: {{business.users.length}}</h4>
+        <div ng-if="vm.user">
+            <button class="btn btn-primary" ng-click="vm.attend(business)">Attend</button>
+            <button class="btn btn-danger" ng-click="vm.cancel(business)">Cancel</button>
+        </div>
+    </li>
+</ul>
